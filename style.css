@@ -34,13 +34,21 @@ body {
 
 header i {
     cursor: pointer;
+    font-size: 0;
+}
+
+.container.active header i{
     font-size: 2rem;
-    margin-right: 1.5rem;
+    margin-left: .25;
+    margin-right: 1.2rem;
 }
 
 .container .input-area {
-/*     display: none; */
     margin: 1.25rem 1.6rem 1.9rem;
+}
+
+.container.active .input-area {
+    display: none;
 }
 
 .input-area .info-area {
@@ -103,10 +111,14 @@ header i {
 
 .container .weather-area {
     margin: 2rem 0 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.container.active .weather-area {
+    display: flex;
 }
 
 .weather-area img {
