@@ -9,3 +9,10 @@ inputField.addEventListener('keyup', event => {
         requestApi(inputField.value);
     }
 });
+
+var apiKey = config.API_KEY;
+
+function requestApi(city) {
+    let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    fetch(api).then(response => console.log(response.json()));
+}
