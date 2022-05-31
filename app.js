@@ -1,7 +1,8 @@
 const container = document.querySelector('.container'),
 inputArea = container.querySelector('.input-area'),
 infoArea = inputArea.querySelector('.info-area'),
-inputField = inputArea.querySelector('input');
+inputField = inputArea.querySelector('input'),
+locationButton = inputArea.querySelector('button');
 
 inputField.addEventListener('keyup', event => {
     //Submit input data using 'enter' button if input field is not empty
@@ -9,6 +10,23 @@ inputField.addEventListener('keyup', event => {
         requestApi(inputField.value);
     }
 });
+
+locationButton.addEventListener('click', () => {
+    //Check if the browser supports the Geolocation API
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    } else {
+        alert('Your browser does not support the Geoloction API');
+    }
+});
+
+function onSuccess(position) {
+    console.log(position);
+}
+
+function onError(error) {
+    console.log(error);
+}
 
 var apiKey = config.API_KEY;
 
