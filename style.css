@@ -200,13 +200,18 @@ header i {
     margin-bottom: 2rem;
 }
 
+.weather-details .humidity .details {
+    margin-top: .4rem;
+}
+
 .weather-details .humidity .details span {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .weather-details .humidity .details p {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-top: -.2rem;
+    margin-bottom: .8rem;
 }
 
 .humidity {
