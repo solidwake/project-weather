@@ -2,7 +2,8 @@ const container = document.querySelector('.container'),
 inputArea = container.querySelector('.input-area'),
 infoArea = inputArea.querySelector('.info-area'),
 inputField = inputArea.querySelector('input'),
-locationButton = inputArea.querySelector('button');
+locationButton = inputArea.querySelector('button'),
+weatherIcon = document.querySelector('.weather-area img');
 
 let api;
 
@@ -58,6 +59,31 @@ function weatherDetails(info) {
         const country = info.sys.country;
         const {description, id} = info.weather[0];
         const {feels_like, humidity, temp} = info.main;
+
+        //Display icons for weather conditions based on id from API object
+        if(id == 800) {
+            weatherIcon.src = 'icons/sunny.svg';
+        } else if(id == 801) {
+            weatherIcon.src = 'icons/partly-cloudy.svg';
+        } else if(id == 802) {
+            weatherIcon.src = 'icons/cloudy.svg';
+        } else if(id >= 803 && id <= 804) {
+            weatherIcon.src = 'icons/overcast.svg';
+        } else if(id == 741) {
+            weatherIcon.src = 'icons/fog.svg';
+        } else if(id >= 600 && id <= 602) {
+            weatherIcon.src = 'icons/snow.svg';
+        } else if(id >= 611 && id <= 622) {
+            weatherIcon.src = 'icons/sleet.svg';
+        } else if(id >= 500 && id <= 531) {
+            weatherIcon.src = 'icons/rain.svg';
+        } else if(id >= 300 && id <= 321) {
+            weatherIcon.src = 'icons/drizzle.svg';
+        } else if(id >= 200 && id <= 232) {
+            weatherIcon.src = 'icons/thunderstorms.svg';
+        }
+
+        
         //Pass values to the respective HTML elements
         container.querySelector('.temperature .number').innerText = Math.floor(temp);
         container.querySelector('.weather-text').innerText = description;
