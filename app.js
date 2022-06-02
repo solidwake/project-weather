@@ -70,6 +70,10 @@ function weatherDetails(info) {
             weatherIcon.src = 'icons/cloudy.svg';
         } else if(id >= 803 && id <= 804) {
             weatherIcon.src = 'icons/overcast.svg';
+        } else if(id == 701) {
+            weatherIcon.src = 'icons/mist.svg';
+        } else if(id == 721) {
+            weatherIcon.src = 'icons/haze.svg';
         } else if(id == 741) {
             weatherIcon.src = 'icons/fog.svg';
         } else if(id >= 600 && id <= 602) {
