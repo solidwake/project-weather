@@ -3,7 +3,8 @@ inputArea = container.querySelector('.input-area'),
 infoArea = inputArea.querySelector('.info-area'),
 inputField = inputArea.querySelector('input'),
 locationButton = inputArea.querySelector('button'),
-weatherIcon = document.querySelector('.weather-area img');
+weatherIcon = document.querySelector('.weather-area img'),
+backArrow = container.querySelector('header i');
 
 let api;
 
@@ -94,7 +95,9 @@ function weatherDetails(info) {
 
         infoArea.classList.remove('pending', 'error');
         container.classList.add('active');
-        console.log(info);
     }
-
 }
+
+backArrow.addEventListener('click', () => {
+    container.classList.remove('active');
+});
