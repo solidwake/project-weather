@@ -1,5 +1,5 @@
 # WeatherGet
-Location based weather app with animated SVG and search by city
+Location based weather app with animated SVG and search by city.
 
 Link: https://solidwake.github.io/project-weather/
 
